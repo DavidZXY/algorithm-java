@@ -19,7 +19,7 @@ public class Solution {
             return stack2.pop();
         else {
             int n = stack1.size();
-            for (int i = 0; i < stack1.size(); i++) {
+            for (int i = 0; i < n; i++) {
                 stack2.push(stack1.pop());
             }
             return stack2.pop();
