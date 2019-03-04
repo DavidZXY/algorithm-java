@@ -5,7 +5,7 @@ import java.util.concurrent.Callable;
 
 public class TestData {
 
-    public static int[] randomArrayWithoutRepeatition(int min, int max, int n) {
+    public static int[] randomArrayWithoutRepetition(int min, int max, int n) {
         int len = max - min + 1;
         if (max < min || n > len || n < 0) {
             return null;
@@ -41,6 +41,14 @@ public class TestData {
             result[i] = (int) (Math.random() * (max - min)) + min;
         }
         return result;
+    }
+
+    public static int[] randomRepetitionArray(int n, int count) {
+        int[] res = new int[n];
+        for (int i = 0; i < n; i++) {
+            res[i] = (int)(Math.random() * count);
+        }
+        return res;
     }
 
     public static int[] almostOrderedArray(int min, int max, int n) {
@@ -100,6 +108,6 @@ public class TestData {
         long end = System.nanoTime();
 
         System.out.println();
-        System.out.println(end - start);
+        System.out.println((end - start) / 1000000000.0 + " s");
     }
 }
