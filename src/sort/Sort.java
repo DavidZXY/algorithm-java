@@ -2,7 +2,10 @@ package sort;
 
 import util.TestData;
 
+import java.math.BigInteger;
 import java.util.concurrent.Callable;
+import java.util.function.UnaryOperator;
+import java.util.stream.Stream;
 
 import static util.TestData.*;
 
@@ -272,5 +275,12 @@ public class Sort {
 
         System.out.println(TestData.isSorted(d));
         TestData.printArray(d);
+
+        Stream<BigInteger> integerStream = Stream.iterate(BigInteger.ONE, new UnaryOperator<BigInteger>() {
+            @Override
+            public BigInteger apply(BigInteger bigInteger) {
+                return null;
+            }
+        });
     }
 }
